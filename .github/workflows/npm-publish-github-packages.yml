@@ -16,7 +16,9 @@ jobs:
         with:
           node-version: 16
       - run: npm ci
+      - run: npm run lint
       - run: npm test
+      - run: npm run build
 
   publish-gpr:
     needs: build
@@ -32,7 +34,6 @@ jobs:
           registry-url: https://npm.pkg.github.com/
           scope: "@hhui64"
       - run: npm ci
-      # - run: echo "registry=https://npm.pkg.github.com/@hhui64" >> .npmrc
       - run: npm publish .
         env:
           NODE_AUTH_TOKEN: ${{secrets.ACCESS_TOKEN}}
