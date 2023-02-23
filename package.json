@@ -1,0 +1,24 @@
+{
+  "name": "actions-demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "build": "echo \"BUILD SUCCESS\" && exit 0",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hhui64/actions-demo.git"
+  },
+  "author": "hhui64",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hhui64/actions-demo/issues"
+  },
+  "homepage": "https://github.com/hhui64/actions-demo#readme",
+  "dependencies": {
+    "dayjs": "^1.11.7"
+  }
+}
