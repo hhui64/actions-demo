@@ -2,6 +2,7 @@
   "name": "@hhui64/actions-demo",
   "version": "1.0.7",
   "description": "",
+  "private": true,
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
