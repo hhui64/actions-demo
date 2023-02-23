@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
+    "lint": "echo \"LINT SUCCESS\" && exit 0",
     "build": "echo \"BUILD SUCCESS\" && exit 0",
     "test": "echo \"TEST SUCCESS\" && exit 0"
   },
