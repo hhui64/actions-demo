@@ -12,7 +12,7 @@
     "changelog": "echo \"CHANGELOG\" && exit 0",
     "preversion": "npm test",
     "version": "npm run build && npm run changelog && git add -A CHANGELOG.md",
-    "postversion": "git push && git push --tags"
+    "postversion": "git push -q && git push --tags -q"
   },
   "repository": {
     "type": "git",
