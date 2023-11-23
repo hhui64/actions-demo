@@ -38,17 +38,14 @@ jobs:
       contents: read
       packages: write
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Set node version to 20
+      - name: Set npm registry url
         uses: actions/setup-node@v4
         with:
           node-version: 20
           registry-url: https://npm.pkg.github.com/
           scope: "@hhui64"
       
-      - name: Publish to Github Packages
+      - name: Publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.ACCESS_TOKEN}}
         run: npm publish .
