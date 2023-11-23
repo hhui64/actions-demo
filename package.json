@@ -10,8 +10,8 @@
     "build": "echo \"BUILD SUCCESS\" && exit 0",
     "test": "echo \"TEST SUCCESS\" && exit 0",
     "changelog": "echo \"CHANGELOG\" && exit 0",
-    "preversion": "npm test",
-    "version": "npm run build",
+    "preversion": "npm test && npm run build",
+    "version": "npm run changelog",
     "postversion": "git push && git push --tags"
   },
   "repository": {
