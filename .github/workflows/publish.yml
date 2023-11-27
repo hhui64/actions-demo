@@ -34,7 +34,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-artifact@v3
         with:
-          name: files
+          name: dist
           path: dist
           retention-days: 1
 
