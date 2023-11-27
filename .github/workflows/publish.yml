@@ -51,7 +51,7 @@ jobs:
       - name: Download artifact
         uses: actions/download-artifact@v3
         with:
-          path: dist/dist
+          path: .
 
       - name: Set npm registry url
         uses: actions/setup-node@v4
