@@ -16,7 +16,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/hhui64/actions-demo.git"
+    "url": "https://github.com/hhui64/actions-demo.git"
   },
   "author": "hhui64",
   "license": "ISC",
