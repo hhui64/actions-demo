@@ -14,7 +14,7 @@ permissions:
 jobs:
   unit-test:
     runs-on: ubuntu-latest
-    if: github.repository == 'hhui64/actions-demo'
+    if: github.event_name == 'push' || github.event_name == 'pull_request'
     env:
       PUPPETEER_SKIP_DOWNLOAD: 'true'
     steps:
