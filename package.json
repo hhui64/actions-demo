@@ -19,7 +19,7 @@
     "url": "git+https://github.com/hhui64/actions-demo.git"
   },
   "publishConfig": {
-    "registry": "https://github.com/hhui64/actions-demo.git"
+    "registry": "https://npm.pkg.github.com"
   },
   "author": "hhui64",
   "license": "ISC",
