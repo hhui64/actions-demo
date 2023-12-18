@@ -1,9 +1,11 @@
-const dayjs = require('dayjs')
 
-console.log(dayjs().format())
+class I extends EventEmitter {
+  constructor (props) {
+    super(props)
+    this.props = props
+  }
 
-module.exports = {
-  test: () => {
-    return dayjs().format()
+  async send (data) {
+    // ...
   }
 }
