@@ -31,6 +31,7 @@
   "homepage": "https://github.com/hhui64/actions-demo#readme",
   "dependencies": {
     "@msgpack/msgpack": "^3.0.0-beta2",
+    "chance": "^1.1.11",
     "dayjs": "^1.11.7",
     "express": "^4.18.2",
     "express-ws": "^5.0.2",
@@ -38,6 +39,7 @@
     "websocket": "^1.0.34"
   },
   "devDependencies": {
+    "@types/chance": "^1.1.6",
     "@types/express": "^4.17.21",
     "@types/express-ws": "^3.0.4",
     "@types/websocket": "^1.0.10",

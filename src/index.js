@@ -5,9 +5,14 @@ init()
 
 const i = new I()
 
-setTimeout(() => {
-  i.send({
-    ccsid: 1,
-    cccid: 1
-  })
-} , 1000)
+setTimeout(async () => await t(), 200)
+
+const t = async () => {
+  try {
+    const r = await i.send({
+      ccsid: 1,
+      cccid: 1
+    })
+    console.log(r)
+  } catch (error) {}
+}

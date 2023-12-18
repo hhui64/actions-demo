@@ -1,6 +1,10 @@
 import WebSocket from 'websocket'
 import { EventEmitter } from 'events'
 
+const getEventName = data => {
+  return `${data.ccsid}-${data.cccid}`
+}
+
 export class I extends EventEmitter {
   constructor(props) {
     super(props)
@@ -12,7 +16,7 @@ export class I extends EventEmitter {
 
     this.wsclient = new WebSocket.client()
     this.wsclient.on('connect', connection => {
-      connection.on('message', this.handleWsMessage)
+      connection.on('message', message => this.handleWsMessage(message))
       this.connection = connection
     })
 
@@ -24,14 +28,25 @@ export class I extends EventEmitter {
 
   handleWsMessage(message) {
     const msg = JSON.parse(message.utf8Data)
-    console.log('(I) Received Message:', msg)
+    const eventName = getEventName(msg)
+
+    this.messageQueue.emit(eventName, msg)
+    this.emit('message', msg)
   }
 
   async send(data) {
-    if (this.connection === null) {
-      return Promise.reject('No connection')
-    }
+    const eventName = getEventName(data)
 
-    this.connection.send(JSON.stringify(data))
+    return new Promise((resolve, reject) => {
+      if (this.connection === null) {
+        return reject('No connection')
+      }
+
+      this.connection.send(JSON.stringify(data))
+
+      this.messageQueue.once(getEventName(data), msg => {
+        resolve(msg)
+      })
+    })
   }
 }

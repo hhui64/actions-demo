@@ -1,3 +1,4 @@
+import { Chance } from 'chance'
 import express from 'express'
 import expressWs from 'express-ws'
 
@@ -17,8 +18,12 @@ export function init() {
 
   app.ws('/', (ws, req) => {
     console.log('Connection opened')
+
     ws.on('message', (msg) => {
-      handleWsMessage(msg, ws)
+      const randomNumber = Chance().integer({ min: 10, max: 30 })
+      setTimeout(() => {
+        handleWsMessage(msg, ws)
+      }, randomNumber)
     })
   })
 }
