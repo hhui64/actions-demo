@@ -1,11 +1,10 @@
+import { I } from './i/i.js'
+import { init } from './wsserver/index.js'
 
-class I extends EventEmitter {
-  constructor (props) {
-    super(props)
-    this.props = props
-  }
+init()
 
-  async send (data) {
-    // ...
-  }
-}
+const i = new I()
+
+setTimeout(() => {
+  i.send('Hello')
+} , 1000)
