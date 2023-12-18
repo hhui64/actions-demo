@@ -6,5 +6,8 @@ init()
 const i = new I()
 
 setTimeout(() => {
-  i.send('Hello')
+  i.send({
+    ccsid: 1,
+    cccid: 1
+  })
 } , 1000)

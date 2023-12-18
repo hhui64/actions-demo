@@ -23,7 +23,8 @@ export class I extends EventEmitter {
   }
 
   handleWsMessage(message) {
-    console.log('(I) Received Message:', message.utf8Data)
+    const msg = JSON.parse(message.utf8Data)
+    console.log('(I) Received Message:', msg)
   }
 
   async send(data) {
@@ -31,6 +32,6 @@ export class I extends EventEmitter {
       return Promise.reject('No connection')
     }
 
-    this.connection.send(data)
+    this.connection.send(JSON.stringify(data))
   }
 }
